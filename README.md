@@ -1,2 +1,2 @@
-# Featurescript_Sprocket
+# FeatureScript_Sprocket
 Onshape FeatureScript Sprocket Generator
