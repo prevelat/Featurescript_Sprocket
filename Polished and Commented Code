@@ -1,7 +1,8 @@
 FeatureScript 1174;
 import(path : "onshape/std/geometry.fs", version : "1174.0");
+tmb::import(path : "c282eef0096883cedd4cdbfe/4d079bc058cdf77146cad154/d12187017453b6827da34a77", version : "89dc1b2985fe7cee54363500");
 
-annotation { "Feature Type Name" : "Sprocket (inch)"}
+annotation { "Feature Type Name" : "Sprocket (inch)", "Icon" : tmb::BLOB_DATA}
 export const Sprocket = defineFeature(function(context is Context, id is Id, definition is map)
     precondition
     {
@@ -59,10 +60,6 @@ export const Sprocket = defineFeature(function(context is Context, id is Id, def
         var teeth = ceil(360 / (2 * alpha) * degree);
         print("Number of teeth:"); println(teeth); /*show teeth count in Part Studio notices*/
         alpha = 180 * degree/ teeth;
-        if (BD > (SD - RD))
-        {
-            throw regenError("Bore radius is too large", ["HD"]);
-        }
         
         // Create teeth sketch plane
         var location = definition.centerPoint;
@@ -198,6 +195,8 @@ export const Sprocket = defineFeature(function(context is Context, id is Id, def
                  "entities" : qSketchRegion(id + "boreSketch"),
                  "endBound" : BoundingType.BLIND,
                  "depth" : RW * 0.9 * inch,
+                 "defaultScope" : false,
+                 "booleanScope" : qCreatedBy(id + "extrude1", EntityType.BODY),
                  "operationType" : NewBodyOperationType.REMOVE,
                  "oppositeDirection" : definition.flipExtrude
             });
