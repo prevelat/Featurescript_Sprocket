@@ -1,7 +1,7 @@
 # FeatureScript_Sprocket
 Onshape FeatureScript Sprocket Generator
 
-Script code written in FeatureScript to generate standard sprockets for: <br/> <br/>      
+Script code written in FeatureScript to generate standard sprockets for: <br/>    
   Chain #25 : {Pitch : 1/4, Roller_Width : 1/8, Roller_Diameter : 0.130},<br/>
   Chain #35 : {Pitch : 3/8, Roller_Width : 3/16, Roller_Diameter : 0.200},<br/>
   Chain #40 : {Pitch : 1/2, Roller_Width : 1/4, Roller_Diameter : 0.306},<br/>
